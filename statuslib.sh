@@ -69,3 +69,21 @@ function warning {
 function error {
   eecho "${BOLD}${RED}==> ERROR:${NORMAL}${BOLD} $@${NORMAL}"
 }
+
+
+function subinfo {
+  if (( $# >= 2 )); then
+    level="$1"; shift
+  else
+    level="1"
+  fi
+
+  for i in $(seq -3 "$level"); do
+    echo -n ' '
+  done
+  eecho "${NORMAL}$@${NORMAL}"
+}
+
+function info {
+  subinfo 0 "$@"
+}
