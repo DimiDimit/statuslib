@@ -15,7 +15,7 @@ MAGENTA=""
 CYAN=""
 WHITE=""
 
-if test -t 1; then
+function setcolors {
   ncolors=$(tput colors)
 
   if test -n "$ncolors" && test $ncolors -ge 8; then
@@ -32,7 +32,9 @@ if test -t 1; then
     CYAN="$(tput setaf 6)"
     WHITE="$(tput setaf 7)"
   fi
-fi
+}
+
+if test -t 1; then setcolors; fi
 
 
 function eecho {
