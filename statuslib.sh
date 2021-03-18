@@ -71,6 +71,9 @@ function warn {
 function error {
   eecho "${BOLD}${RED}==> ERROR:${NORMAL}${BOLD} $@${NORMAL}"
 }
+function question {
+  eecho "${BOLD}${BLUE}::${NORMAL}${BOLD} $@${NORMAL}"
+}
 
 
 function subinfo {
