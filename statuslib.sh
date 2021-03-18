@@ -64,7 +64,7 @@ function step {
   substep 0 "$@"
 }
 
-function warning {
+function warn {
   eecho "${BOLD}${YELLOW}==> WARNING:${NORMAL}${BOLD} $@${NORMAL}"
 }
 
